@@ -130,8 +130,7 @@ def initialize_model():
     )
     return model
 
-def get_answer(prompt):
-
+def get_answer(chat_session, prompt):
 
     # Kirim ke Gemini
     response = chat_session.send_message(prompt)
