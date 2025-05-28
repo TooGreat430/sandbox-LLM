@@ -17,7 +17,7 @@ st.divider()
 # Chat history display
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
-        {"role": "assistant", "content": "Hello Marvel Fans. What can I help you find today?"}
+        {"role": "assistant", "content": "Hello Marvel Fans! Welcome To Comic Con! What can I help you find today?"}
     ]
 
 for msg in st.session_state.messages:
