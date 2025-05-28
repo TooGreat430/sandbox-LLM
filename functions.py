@@ -151,9 +151,6 @@ def get_answer(chat_session, prompt):
                 temp_dict[key_2] = value_2
             comic_list.append(temp_dict)
 
-    # Convert chat history ke DataFrame
-    chat_df = pd.DataFrame(chat_history_list)
-
     return response_message, comic_list, chat_df
 
 def content_extraction(prompt):
