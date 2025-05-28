@@ -46,7 +46,6 @@ for msg in st.session_state.messages:
                 st.markdown(f"• **Price**: {comic.get('price', 'N/A')}")
         else:
             st.write(msg["content"])
-        st.markdown(msg["content"])
 
 # Chat input from user
 if prompt := st.chat_input("Type your Marvel comic question here..."):
@@ -68,11 +67,11 @@ if prompt := st.chat_input("Type your Marvel comic question here..."):
                     st.write(response_message)
                     for comic in comic_list:
                         st.markdown("#### 📘 Comic Info")
-                        st.markdown(f"• **Series**: {comic.get('series_name', 'N/A')}")
-                        st.markdown(f"• **Issue Title**: {comic.get('issue_title', 'N/A')}")
-                        st.markdown(f"• **Release Date**: {comic.get('release_date', 'N/A')}")
-                        st.markdown(f"• **publisher**: {comic.get('writer', 'N/A')}")
-                        st.markdown(f"• **Price**: {comic.get('price', 'N/A')}")
+                        st.markdown(f"• **Series**: {comic['series_name']}")
+                        st.markdown(f"• **Issue Title**: {comic['issue_title']}")
+                        st.markdown(f"• **Release Date**: {comic['release_date']}")
+                        st.markdown(f"• **publisher**: {comic['writer']}")
+                        st.markdown(f"• **Price**: {comic['price']}")
                         st.divider()
             else:
                 st.session_state.messages.append({
