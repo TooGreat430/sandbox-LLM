@@ -152,7 +152,7 @@ def get_answer(chat_session, prompt):
                 temp_dict[key_2] = value_2
             comic_list.append(temp_dict)
 
-    return response_message, comic_list
+    return chat_session, response_message, comic_list
 
 def content_extraction(prompt):
     get_detail_comic = FunctionDeclaration(
