@@ -39,13 +39,13 @@ for msg in st.session_state.messages:
         if isinstance(msg["content"], dict):
             st.write(msg["content"]["message"])
             for product in msg["content"]["comic_message"]:
-                st.markdown("#### 📘 Comic Info")
-                st.markdown(f"• **Title**: {comic['title']}")
-                st.markdown(f"• **Characters**: {comic['characters']}")
-                st.markdown(f"• **Release Date**: {comic['year']}")
-                st.markdown(f"• **Publisher**: {comic['publisher']}")
-                st.markdown(f"• **Description**: {comic['issue_description']}")
-                st.markdown(f"• **Price**: {comic['Price']}")
+                st.write("#### 📘 Comic Info")
+                st.write(f"• **Title**: {comic['title']}")
+                st.write(f"• **Characters**: {comic['characters']}")
+                st.write(f"• **Release Date**: {comic['year']}")
+                st.write(f"• **Publisher**: {comic['publisher']}")
+                st.write(f"• **Description**: {comic['issue_description']}")
+                st.write(f"• **Price**: {comic['Price']}")
         else:
             st.write(msg["content"])
 
@@ -53,7 +53,7 @@ for msg in st.session_state.messages:
 if prompt := st.chat_input("Type your Marvel comic question here..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
-        st.markdown(prompt)
+        st.write(prompt)
 
     with st.spinner("Searching the Marvel universe..."):
         try:
@@ -68,13 +68,13 @@ if prompt := st.chat_input("Type your Marvel comic question here..."):
                 with st.chat_message("assistant"):
                     st.write(response_message)
                     for comic in comic_list:
-                        st.markdown("#### 📘 Comic Info")
-                        st.markdown(f"• **Title**: {comic['title']}")
-                        st.markdown(f"• **Characters**: {comic['characters']}")
-                        st.markdown(f"• **Release Date**: {comic['year']}")
-                        st.markdown(f"• **Publisher**: {comic['publisher']}")
-                        st.markdown(f"• **Description**: {comic['issue_description']}")
-                        st.markdown(f"• **Price**: {comic['Price']}")
+                        st.write("#### 📘 Comic Info")
+                        st.write(f"• **Title**: {comic['title']}")
+                        st.write(f"• **Characters**: {comic['characters']}")
+                        st.write(f"• **Release Date**: {comic['year']}")
+                        st.write(f"• **Publisher**: {comic['publisher']}")
+                        st.write(f"• **Description**: {comic['issue_description']}")
+                        st.write(f"• **Price**: {comic['Price']}")
                         st.divider()
             else:
                 st.session_state.messages.append({

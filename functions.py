@@ -176,13 +176,13 @@ def content_extraction(prompt):
                         "type": "object",
                         "properties": {
                             "title": {"type": "string"},
-                            "Characters": {"type": "string"},
+                            "characters": {"type": "string"},
                             "year": {"type": "string"},
                             "publisher": {"type": "string"},
                             "issue_description": {"type": "string"},
                             "Price": {"type": "string"}
                         },
-                        "required": ["title", "Characters", "year", "publisher", "issue_description", "Price"]
+                        "required": ["title", "characters", "year", "publisher", "issue_description", "Price"]
                     }
                 }
             },
