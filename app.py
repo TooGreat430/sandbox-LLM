@@ -17,8 +17,6 @@ st.markdown(
 if "chat" not in st.session_state:
     st.session_state["chat"] = initialize_model().start_chat()
 
-st.set_page_config(page_title="Marvel Comic Search", layout="wide")
-
 # Header
 st.title("Marvel Comic Con 2025")
 st.markdown("Welcome, true believer! Dive into the Marvel Universe and discover epic comics, legendary heroes, and unforgettable stories 🦸‍♂️🦸‍♀️")
