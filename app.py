@@ -52,37 +52,29 @@ for msg in st.session_state.messages:
 # Chat input from user
 if prompt := st.chat_input("Type your Marvel comic question here..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.write(prompt)
-
+    st.chat_message("user").write(prompt)
     with st.spinner("Searching the Marvel universe..."):
-        try:
-            st.session_state['chat'], response_message, comic_list = get_answer(st.session_state['chat'], prompt)
-
-            if comic_list:
-                # Simpan ke message log
-                st.session_state.messages.append({
-                    "role": "assistant",
-                    "content": comic_list
-                })
-                with st.chat_message("assistant"):
-                    st.write(response_message)
-                    for comic in comic_list:
-                        st.write("#### 📘 Comic Info")
-                        st.write(f"• **Title**: {comic['title']}")
-                        st.write(f"• **Characters**: {comic['characters']}")
-                        st.write(f"• **Release Date**: {comic['year']}")
-                        st.write(f"• **Publisher**: {comic['publisher']}")
-                        st.write(f"• **Description**: {comic['issue_description']}")
-                        st.write(f"• **Price**: {comic['Price']}")
-                        st.divider()
-            else:
-                st.session_state.messages.append({
-                    "role": "assistant",
-                    "comic_message": response_message
-                })
-                st.chat_message("assistant").write(response_message)
+        st.session_state['chat'], response_message, comic_list = get_answer(st.session_state['chat'], prompt)
+        if len(comic_list) == 0:
+            st.session_state.messages.append({
+                "role": "assistant",
+                "comic_message": response_message
+            })
+            st.chat_message("assistant").write(response_message)
+        else:
+            st.session_state.messages.append({
+                "role": "assistant",
+                "content": comic_list
+            })
+            with st.chat_message("assistant"):
+                st.write(response_message)
+                for comic in comic_list:
+                    st.write("#### 📘 Comic Info")
+                    st.write(f"• **Title**: {comic['title']}")
+                    st.write(f"• **Characters**: {comic['characters']}")
+                    st.write(f"• **Release Date**: {comic['year']}")
+                    st.write(f"• **Publisher**: {comic['publisher']}")
+                    st.write(f"• **Description**: {comic['issue_description']}")
+                    st.write(f"• **Price**: {comic['Price']}")
+                
                     
-
-        except Exception as e:
-            st.error(f"Error occurred: {e}")
