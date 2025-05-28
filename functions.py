@@ -145,7 +145,7 @@ def get_answer(chat_session, prompt):
     for key, value in extracted_content.candidates[0].content.parts[0].function_call.args.items():
         result[key] = value
 
-    if result.get('reliability'):
+    if result['reliability']:
         response_message = result['message']
         for item in result['comic_list']:
             temp_dict = {}
@@ -164,7 +164,7 @@ def content_extraction(prompt):
             "properties": {
                 "reliability": {
                     "type": "boolean",
-                    "description": "True jika hasil ekstraksi valid"
+                    "description": "Define this calling function result is complete with all message and comic_list or not. If complete, then True. If message is None or comic_list is empty or both of them missing, then False. Give False too if there's no message and comic_list to be extracted""
                 },
                 "message": {
                     "type": "string",
