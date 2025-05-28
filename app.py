@@ -39,11 +39,13 @@ for msg in st.session_state.messages:
         if isinstance(msg["content"], dict):
             st.write(msg["content"]["message"])
             for product in msg["content"]["comic_message"]:
-                st.markdown(f"• **Series**: {comic.get('series_name', 'N/A')}")
-                st.markdown(f"• **Issue Title**: {comic.get('issue_title', 'N/A')}")
-                st.markdown(f"• **Release Date**: {comic.get('release_date', 'N/A')}")
-                st.markdown(f"• **publisher**: {comic.get('writer', 'N/A')}")
-                st.markdown(f"• **Price**: {comic.get('price', 'N/A')}")
+                st.markdown("#### 📘 Comic Info")
+                st.markdown(f"• **Title**: {comic['title']}")
+                st.markdown(f"• **Characters**: {comic['characters']}")
+                st.markdown(f"• **Release Date**: {comic['year']}")
+                st.markdown(f"• **Publisher**: {comic['publisher']}")
+                st.markdown(f"• **Description**: {comic['issue_description']}")
+                st.markdown(f"• **Price**: {comic['Price']}")
         else:
             st.write(msg["content"])
 
