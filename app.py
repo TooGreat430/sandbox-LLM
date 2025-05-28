@@ -58,13 +58,16 @@ if prompt := st.chat_input("Type your Marvel comic question here..."):
         if len(comic_list) == 0:
             st.session_state.messages.append({
                 "role": "assistant",
-                "comic_message": response_message
+                "content": response_message
             })
             st.chat_message("assistant").write(response_message)
         else:
             st.session_state.messages.append({
                 "role": "assistant",
-                "content": comic_list
+                "content": {
+                    "message": response_message
+                    "comic_message": comic_list
+                }
             })
             with st.chat_message("assistant"):
                 st.write(response_message)
