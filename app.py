@@ -65,7 +65,7 @@ if prompt := st.chat_input("Type your Marvel comic question here..."):
             st.session_state.messages.append({
                 "role": "assistant",
                 "content": {
-                    "message": response_message
+                    "message": response_message,
                     "comic_message": comic_list
                 }
             })
