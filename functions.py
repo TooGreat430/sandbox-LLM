@@ -164,15 +164,15 @@ def content_extraction(prompt):
             "properties": {
                 "reliability": {
                     "type": "boolean",
-                    "description": "Define this calling function result is complete with all message and comic_list or not. If complete, then True. If message is None or comic_list is empty or both of them missing, then False. Give False too if there's no message and comic_list to be extracted""
+                    "description": "Define this calling function result is complete with all message and comic_list or not. If complete, then True. If message is None or comic_list is empty or both of them missing, then False. Give False too if there's no message and comic_list to be extracted"
                 },
                 "message": {
                     "type": "string",
-                    "description": "Penjelasan utama dari hasil pencarian komik"
+                    "description": "Main Description from the comic search"
                 },
                 "comic_list": {
                     "type": "array",
-                    "description": "Daftar komik yang sesuai",
+                    "description": "List of wanted comics",
                     "items": {
                         "type": "object",
                         "properties": {
