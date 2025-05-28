@@ -131,17 +131,11 @@ def initialize_model():
     return model
 
 def get_answer(prompt):
-    global chat_history_list
 
-    # Simpan prompt user
-    chat_history_list.append({"role": "user", "message": prompt})
 
     # Kirim ke Gemini
     response = chat_session.send_message(prompt)
     response_message = response.text
-
-    # Simpan balasan assistant
-    chat_history_list.append({"role": "assistant", "message": response_message})
 
     # Ekstraksi structured content (jika perlu)
     extracted_content = content_extraction(response.text)
