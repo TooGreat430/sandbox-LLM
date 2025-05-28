@@ -63,7 +63,7 @@ if prompt := st.chat_input("Type your Marvel comic question here..."):
                 # Simpan ke message log
                 st.session_state.messages.append({
                     "role": "assistant",
-                    "content": response_message
+                    "content": comic_list
                 })
                 with st.chat_message("assistant"):
                     st.write(response_message)
