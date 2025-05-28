@@ -32,7 +32,7 @@ if prompt := st.chat_input("Type your Marvel comic question here..."):
 
     with st.spinner("Searching the Marvel universe..."):
         try:
-            response_message, comic_list, chat_df = get_answer(prompt)
+            response_message, comic_list, chat_df = get_answer(st..session_state['chat'], prompt)
 
             if comic_list:
                 # Simpan ke message log
