@@ -12,6 +12,7 @@ from vertexai.preview.generative_models import (
     grounding
 )
 
+
 PROJECT_ID = "poc-mulia-ceramics-ai"
 LOCATION_VERTEX_AI = "asia-southeast1"
 vertexai.init(project=PROJECT_ID, location=LOCATION_VERTEX_AI)
@@ -151,7 +152,7 @@ def get_answer(chat_session, prompt):
                 temp_dict[key_2] = value_2
             comic_list.append(temp_dict)
 
-    return response_message, comic_list, chat_df
+    return response_message, comic_list
 
 def content_extraction(prompt):
     get_detail_comic = FunctionDeclaration(
