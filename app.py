@@ -32,7 +32,7 @@ if prompt := st.chat_input("Type your Marvel comic question here..."):
 
     with st.spinner("Searching the Marvel universe..."):
         try:
-            response_message, comic_list = get_answer(st.session_state['chat'], prompt)
+            st.session_state['chat'], response_message, comic_list = get_answer(st.session_state['chat'], prompt)
 
             if comic_list:
                 # Simpan ke message log
@@ -41,13 +41,13 @@ if prompt := st.chat_input("Type your Marvel comic question here..."):
                     "content": response_message
                 })
                 with st.chat_message("assistant"):
-                    st.markdown(response_message)
+                    st.write(response_message)
                     for comic in comic_list:
                         st.markdown("#### 📘 Comic Info")
                         st.markdown(f"• **Series**: {comic.get('series_name', 'N/A')}")
                         st.markdown(f"• **Issue Title**: {comic.get('issue_title', 'N/A')}")
                         st.markdown(f"• **Release Date**: {comic.get('release_date', 'N/A')}")
-                        st.markdown(f"• **Writer**: {comic.get('writer', 'N/A')}")
+                        st.markdown(f"• **publisher**: {comic.get('publisher', 'N/A')}")
                         st.markdown(f"• **Price**: {comic.get('price', 'N/A')}")
                         st.divider()
             else:
@@ -55,8 +55,8 @@ if prompt := st.chat_input("Type your Marvel comic question here..."):
                     "role": "assistant",
                     "content": response_message
                 })
-                with st.chat_message("assistant"):
-                    st.markdown(response_message)
+                st.chat_message("assistant").write(response_message)
+                    
 
         except Exception as e:
             st.error(f"Error occurred: {e}")
