@@ -4,7 +4,6 @@ from functions import initialize_model, get_answer
 # Inisialisasi session chat
 if "chat" not in st.session_state:
     st.session_state["chat"] = initialize_model().start_chat()
-    st.session_state["chat_history_list"] = []
 
 st.set_page_config(page_title="Marvel Comic Search", layout="wide")
 
