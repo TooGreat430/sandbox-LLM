@@ -67,11 +67,12 @@ if prompt := st.chat_input("Type your Marvel comic question here..."):
                     st.write(response_message)
                     for comic in comic_list:
                         st.markdown("#### 📘 Comic Info")
-                        st.markdown(f"• **Series**: {comic['series_name']}")
-                        st.markdown(f"• **Issue Title**: {comic['issue_title']}")
-                        st.markdown(f"• **Release Date**: {comic['release_date']}")
-                        st.markdown(f"• **publisher**: {comic['writer']}")
-                        st.markdown(f"• **Price**: {comic['price']}")
+                        st.markdown(f"• **Title**: {comic['title']}")
+                        st.markdown(f"• **Characters**: {comic['characters']}")
+                        st.markdown(f"• **Release Date**: {comic['year']}")
+                        st.markdown(f"• **Publisher**: {comic['publisher']}")
+                        st.markdown(f"• **Description**: {comic['issue_description']}")
+                        st.markdown(f"• **Price**: {comic['Price']}")
                         st.divider()
             else:
                 st.session_state.messages.append({

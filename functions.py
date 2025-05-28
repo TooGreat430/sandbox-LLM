@@ -175,11 +175,12 @@ def content_extraction(prompt):
                     "items": {
                         "type": "object",
                         "properties": {
-                            "series_name": {"type": "string"},
-                            "issue_title": {"type": "string"},
-                            "release_date": {"type": "string"},
-                            "writer": {"type": "string"},
-                            "price": {"type": "string"}
+                            "title": {"type": "string"},
+                            "Characters": {"type": "string"},
+                            "year": {"type": "string"},
+                            "publisher": {"type": "string"},
+                            "issue_description": {"type": "string"},
+                            "Price": {"type": "string"}
                         },
                         "required": ["series_name", "issue_title", "release_date"]
                     }
