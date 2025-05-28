@@ -182,7 +182,7 @@ def content_extraction(prompt):
                             "issue_description": {"type": "string"},
                             "Price": {"type": "string"}
                         },
-                        "required": ["series_name", "issue_title", "release_date"]
+                        "required": ["title", "Characters", "year", "publisher", "issue_description", "Price"]
                     }
                 }
             },
