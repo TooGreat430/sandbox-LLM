@@ -38,7 +38,7 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         if isinstance(msg["content"], dict):
             st.write(msg["content"]["message"])
-            for product in msg["content"]["comic_message"]:
+            for comic in msg["content"]["comic_message"]:
                 st.write("#### 📘 Comic Info")
                 st.write(f"• **Title**: {comic['title']}")
                 st.write(f"• **Characters**: {comic['characters']}")
