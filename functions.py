@@ -149,7 +149,7 @@ def get_answer(chat_session, prompt):
         result[key] = value
 
     if result['reliability']:
-        response_message = result['message']
+        # response_message = result['message']
         for item in result['comic_list']:
             temp_dict = {}
             for key_2, value_2 in item.items():
