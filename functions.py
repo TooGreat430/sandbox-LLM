@@ -168,7 +168,7 @@ def content_extraction(prompt):
                 },
                 "message": {
                     "type": "string",
-                    "description": "Main Description from the comic search"
+                    "description": "Main description from the comic search. If not found, return 'None'."
                 },
                 "comic_list": {
                     "type": "array",
@@ -176,12 +176,30 @@ def content_extraction(prompt):
                     "items": {
                         "type": "object",
                         "properties": {
-                            "title": {"type": "string"},
-                            "characters": {"type": "string"},
-                            "year": {"type": "string"},
-                            "publisher": {"type": "string"},
-                            "issue_description": {"type": "string"},
-                            "Price": {"type": "string"}
+                            "title": {
+                                "type": "string",
+                                "description": "Comic Title"
+                                },
+                            "characters": {
+                                "type": "string",
+                                "description": "Comic Characters"
+                                },
+                            "year": {
+                                "type": "string",
+                                "description": "Published Years"
+                            },
+                            "publisher": {
+                                "type": "string",
+                                "description": "Name of the publisher"
+                            },
+                            "issue_description": {
+                                "type": "string",
+                                "description": "Comic Description"
+                            },
+                            "Price": {
+                                "type": "string",
+                                "description": "Comic Price"
+                            }
                         },
                         "required": ["title", "characters", "year", "publisher", "issue_description", "Price"]
                     }
