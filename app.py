@@ -1,5 +1,5 @@
 import streamlit as st
-from functions import initialize_model, get_answer
+from functions import *
 
 
 st.markdown(
