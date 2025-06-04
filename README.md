@@ -48,6 +48,7 @@ Proyek ini membangun sistem pencarian komik Marvel berbasis **Vertex AI Search**
     ```
     development code --> 2_Prompting model.ipynb
     ```
+---
 
 ### 4. 🧪 Evaluasi (Opsional)
 
