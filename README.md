@@ -29,9 +29,14 @@ Proyek ini membangun sistem pencarian komik Marvel berbasis **Vertex AI Search**
 - Buat **datastore baru**:
   - **Source**: BigQuery
   - **Type**: Structured
+  ![image](https://github.com/user-attachments/assets/ce38b446-da31-460b-a43e-2b84a668dd93)
+  ![image](https://github.com/user-attachments/assets/3e7ee60c-9889-4a0d-8df0-15dd387b3062)
+
 - Setelah datastore berhasil dibuat, buat aplikasi baru:
   - Pilih **Custom Search**
   - Hubungkan aplikasi dengan datastore yang sudah dibuat tadi.
+  ![image](https://github.com/user-attachments/assets/fb862031-8315-4f98-ad5e-fdb42b12e2ba)
+  ![image](https://github.com/user-attachments/assets/882e2ee6-35cf-449b-9b90-61b14376964b)
 
 ---
 
@@ -76,5 +81,9 @@ Proyek ini membangun sistem pencarian komik Marvel berbasis **Vertex AI Search**
 2. Buka **Cloud Run** > klik **Deploy container** > pilih **Services**.
 3. Hubungkan ke **GitHub** repository kamu.
 4. Lanjutkan proses deployment hingga aplikasi online.
+
+![image](https://github.com/user-attachments/assets/a40706e6-2e72-4b72-88ee-cd3a1f454ce5)
+![image](https://github.com/user-attachments/assets/796e1113-6b87-45ff-8fc6-faf88f6cfc17)
+
 
 ---
